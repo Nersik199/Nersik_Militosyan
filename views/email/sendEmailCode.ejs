@@ -1,0 +1,36 @@
+<div
+	style="
+		background-color: lightgreen !important;
+		width: 100% !important;
+		height: 400px !important;
+
+		padding: 20px !important;
+	"
+>
+	<img
+		src="localhost:3000<%= avatar %>"
+		style="
+			width: 100px !important;
+			height: 100px !important;
+			border-radius: 50% !important;
+			object-fit: cover !important;
+		"
+		alt="avatar"
+	/>
+
+	<h1>please check your email</h1>
+	<p style="font-size: 19px; font-weight: 600"><%= title %></p>
+	<a
+		class="link"
+		style="
+			text-decoration: none !important;
+			padding: 5px 8px !important;
+			border-radius: 10px !important;
+			background-color: #333 !important;
+			color: #fff !important;
+		"
+		href=" <%= link %>"
+	>
+		account activation
+	</a>
+</div>

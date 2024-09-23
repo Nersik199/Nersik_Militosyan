@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register Event</h1>
+    <form class="form" action="">
+        <input id="firstName" type="text">
+        <input id="lastName" type="text">
+        <input id="email" type="email">
+        <input type="submit">
+    </form>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const form = document.querySelector('form');
+        const id = '<%= id %>';
+
+        form.addEventListener('submit', async event => {
+            event.preventDefault();
+            const data = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+            };
+            console.log(data);
+
+            try {
+                const response = await axios.post(`/event/register?id=${id}`, data);
+
+                if(response.data) {
+                    alert('Registration successful');
+                    window.location.href = '/';
+                }
+                console.log(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        });
+    </script>
+</body>
+</html>
